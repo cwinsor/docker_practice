@@ -1,0 +1,2 @@
+following https://realpython.com/primer-on-jinja-templating/
+and THIS:  https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates

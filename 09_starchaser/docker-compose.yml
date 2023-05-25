@@ -1,0 +1,30 @@
+version: "3"
+services:
+  web:
+    build: ./app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app/:/home/app/
+    depends_on:
+      - db
+  db:
+    container_name: pg_container_08
+    image: postgres:10
+    env_file: .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: pgadmin4_container_08
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+volumes:
+  pgdata:
