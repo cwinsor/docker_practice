@@ -1,0 +1,60 @@
+following https://towardsdatascience.com/how-to-run-postgresql-and-pgadmin-using-docker-3a6a8ae918b5
+
+----- not necessary ----------
+    (one time only)
+    python3 -m venv venv
+    python3 -m pip install -r requirements.txt
+
+    (every time)
+    source venv/bin/activate
+
+
+(venv) $ docker compose up
+
+This starts 
+(venv) $ docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                           NAMES
+f47f5c961cb8   postgres         "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes   0.0.0.0:5432->5432/tcp          pg_container
+b3ebeeedbdc8   dpage/pgadmin4   "/entrypoint.sh"         11 minutes ago   Up 11 minutes   443/tcp, 0.0.0.0:5050->80/tcp   pgadmin4_container
+
+------- one time only -------
+you need to open windows firewall for 5050, 5432 and any others...
+
+
+Browser open to
+http://localhost:5050/. Use the admin@admin.com as the email address and root as the password t
+
+This opens the PgAdmin
+
+1) You can find the PostgreSQL database server’s container name using the docker ps command and grab the name from the NAMES column
+   In this post, we have explicitly named the container in the docker-compose.yml file, so you can refer to that as well.
+
+2) Because the container name is identical to the hostname, you can use that.
+
+3) use IP of the WSL...  ("ip a")
+
+in PgAdmin...
+servers - connecction new server
+host localhost 192.168.0.0   0.0.0.0
+port 5432
+database postgres
+username root
+password root
+
+
+
+
+
+---------------
+control-c not working...
+stty intr \^k
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+docker-compose up 2>&1 > output.log
+
+
+
+docker-compose up > output.log 2>&1
+
+

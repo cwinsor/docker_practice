@@ -1,0 +1,6 @@
+[submodule "08_flask_python_postgres/docker-flask-postgres"]
+	path = 08_flask_python_postgres/docker-flask-postgres
+	url = https://github.com/mehemken/docker-flask-postgres
+[submodule "06_flask_crud_postgres/aws-docker-templates-flask"]
+	path = 06_flask_crud_postgres/aws-docker-templates-flask
+	url = https://github.com/tinystacks/aws-docker-templates-flask

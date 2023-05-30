@@ -25,7 +25,6 @@ app.secret_key = 'foobarbaz'
 
 db = SQLAlchemy(app)
 
-
 class students(db.Model):
     id = db.Column('student_id', db.Integer, primary_key=True)
     name = db.Column(db.String(100))
@@ -50,8 +49,8 @@ def database_initialization_sequence():
     db.session.commit()
 
 
-@app.route('/', methods=['GET', 'POST'])
-def home():
+@app.route('/database', methods=['GET', 'POST'])
+def database():
     if request.method == 'POST':
         if not request.form['name'] or not request.form['city'] or not request.form['addr']:
             flash('Please enter all the fields', 'error')
@@ -66,6 +65,34 @@ def home():
             flash('Record was succesfully added')
             return redirect(url_for('home'))
     return render_template('show_all.html', students=students.query.all())
+
+
+@app.route("/results")
+def results():
+
+    max_score = 100
+    test_name = "Python Challenge"
+    students = [
+        {"name": "Sandrine",  "score": 100},
+        {"name": "Gergeley", "score": 87},
+        {"name": "Frieda", "score": 92},
+        {"name": "Fritz", "score": 40},
+        {"name": "Sirius", "score": 75},
+    ]
+
+    context = {
+        "title": "Resultss",
+        "students": students,
+        "test_name": test_name,
+        "max_score": max_score,
+    }
+    return render_template("results.html", **context)
+
+@app.route("/home")
+def home():
+
+    return render_template("home.html")
+
 
 
 if __name__ == '__main__':

@@ -1,0 +1,78 @@
+following 
+https://medium.com/@samy_raps/flask-vue-mysql-on-docker-part-i-setting-up-320d55a85971
+https://medium.com/@samy_raps/flask-vue-mysql-on-docker-part-i-i-the-front-end-c9209a4a27a2
+https://medium.com/@samy_raps/flask-vue-mysql-on-docker-part-i-ii-lets-dockerize-1ca3737ebc7c
+
+
+Flask + Vue + MySQL on Docker.
+
+The db folder will have the sql query to create the quotes table
+The api folder will contain our flask api code
+The nginx folder will have our nginx configurations.
+
+Creating the database------------
+https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database
+To install MySQL on WSL (ie. Ubuntu):
+Open your WSL terminal (ie. Ubuntu).
+Update your Ubuntu packages: sudo apt update
+Once the packages have updated, install MySQL with: sudo apt install mysql-server
+Confirm installation and get the version number: mysql --version
+Start MySQL server: sudo /etc/init.d/mysql start
+To open the MySQL prompt, enter: sudo mysql
+To see what databases you have available, in the MySQL prompt, enter: SHOW DATABASES;
+To create a new database, enter: CREATE DATABASE database_name;
+To delete a database, enter: DROP DATABASE database_name;
+
+
+
+
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Developing a Single Page App with Flask and Vue.js
+
+The following is a step-by-step walkthrough of how to set up a basic CRUD app with Vue and Flask. We'll start by scaffolding a new Vue application and then move on to performing the basic CRUD operations through a back-end RESTful API powered by Python and Flask.
+
+python3 -m venv env
+source env/bin/activate
+python3 -m pip install -r requirements.txt
+
+-------------------
+Add an app.py file to the newly created "server" directory:
+
+from flask import Flask, jsonify
+from flask_cors import CORS
+
+# instantiate the app
+app = Flask(__name__)
+app.config.from_object(__name__)
+
+# enable CORS
+CORS(app, resources={r'/*': {'origins': '*'}})
+
+# sanity check route
+@app.route('/ping', methods=['GET'])
+def ping_pong():
+    return jsonify('pong!')
+
+if __name__ == '__main__':
+    app.run()
+-------------------
+
+(env)$ flask run --port=5001 --debug
+
+quit that.
+
+npm create vue@3.6.1
+✔ Project name: › client
+✔ Add TypeScript? › No
+✔ Add JSX Support? › No
+✔ Add Vue Router for Single Page Application development? › Yes
+✔ Add Pinia for state management? › No
+✔ Add Vitest for Unit Testing? › No
+✔ Add ESLint for code quality? › No
+
+
+<she no work>

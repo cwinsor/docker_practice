@@ -1,0 +1,47 @@
+following https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/
+
+Developing a Single Page App with Flask and Vue.js
+
+The following is a step-by-step walkthrough of how to set up a basic CRUD app with Vue and Flask. We'll start by scaffolding a new Vue application and then move on to performing the basic CRUD operations through a back-end RESTful API powered by Python and Flask.
+
+python3 -m venv env
+source env/bin/activate
+python3 -m pip install -r requirements.txt
+
+-------------------
+Add an app.py file to the newly created "server" directory:
+
+from flask import Flask, jsonify
+from flask_cors import CORS
+
+# instantiate the app
+app = Flask(__name__)
+app.config.from_object(__name__)
+
+# enable CORS
+CORS(app, resources={r'/*': {'origins': '*'}})
+
+# sanity check route
+@app.route('/ping', methods=['GET'])
+def ping_pong():
+    return jsonify('pong!')
+
+if __name__ == '__main__':
+    app.run()
+-------------------
+
+(env)$ flask run --port=5001 --debug
+
+quit that.
+
+npm create vue@3.6.1
+✔ Project name: › client
+✔ Add TypeScript? › No
+✔ Add JSX Support? › No
+✔ Add Vue Router for Single Page Application development? › Yes
+✔ Add Pinia for state management? › No
+✔ Add Vitest for Unit Testing? › No
+✔ Add ESLint for code quality? › No
+
+
+<she no work>
