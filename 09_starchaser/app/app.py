@@ -93,6 +93,75 @@ def home():
 
     return render_template("home.html")
 
+@app.route("/sc01_welcome")
+def sc01_welcome():
+
+    user = {'username': 'Miguel'}
+    posts = [
+        {
+            'author': {'username': 'John'},
+            'body': 'Beautiful day in Portland!'
+        },
+        {
+            'author': {'username': 'Susan'},
+            'body': 'The Avengers movie was so cool!'
+        }
+    ]
+    return render_template("sc01_welcome.html", user=user, posts=posts)
+
+@app.route("/sc02_player_logout")
+def sc02_player_logout():
+    context = {
+        "title": "logout",    }
+    return render_template("sc02_player_logout.html", **context)
+
+@app.route("/sc03_player_signup")
+def sc03_player_signup():
+    context = {
+        "title": "signup",    }
+    return render_template("sc03_player_signup.html", **context)
+
+@app.route("/sc04_player_login")
+def sc04_player_login():
+    context = {
+        "title": "login",    }
+    return render_template("sc04_player_login.html", **context)
+
+@app.route("/ref01_why_game")
+def ref01_why_game():
+    return render_template("ref01_why_game.html")
+
+@app.route("/ref05_this_web_application")
+def ref05_this_web_application():
+    return render_template("ref05_this_web_application.html")
+
+@app.route("/ref08_plasticc_and_kaggle")
+def ref08_plasticc_and_kaggle():
+    return render_template("ref08_plasticc_and_kaggle.html")
+
+@app.route("/ref04_variety_of_approaches")
+def ref04_variety_of_approaches():
+    return render_template("ref04_variety_of_approaches.html")
+
+@app.route("/ref06_building_a_model")
+def ref06_building_a_model():
+    return render_template("ref06_building_a_model.html")
+
+@app.route("/ref09_metrics")
+def ref09_metrics():
+    return render_template("ref09_metrics.html")
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':

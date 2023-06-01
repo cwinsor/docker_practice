@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>context...</title>
+</head>
+
+<body>
+    <h1>Metrics and Why They Are Important</h1>
+
+
+    <p>
+        Metrics are the means by which performance of a machine learning model is measured.
+        Establishing well-defined metrics is arguably the most important and frequently overlooked
+        step in framing a machine learning problem.
+    </p>
+    <p>
+        The organizers of PLAsTiCC put significant effort in establishing
+        metrics.  They publishing a paper [1] on just that topic.
+    </p>
+    <p>
+        In the end they chose probabilistic classification as the metric, which means the model
+        must assign a likelihood score for each of the class values.
+        This differs from the more typical MAP (maximum a-priori) classification where
+        the model would predict the most likely class.
+        The reason given by the authors is that, in star research, lesser-probable classes might warrent
+        investigation if that class is interesting.
+        Specifically "an object with even a moderate probability of being of a very
+        rare class could be worth the risk (of further investigation)".
+    </p>
+    <p>
+        In other words - probabilistic classification provides richer data to help guide further study of individual
+        objects.
+    </p>
+    <p>
+        For our web application we need to make this tractable for the average user.
+        To do so - we pose this as a betting game where
+        the player has $100 and must place their bets on the N classes of star.
+        They are free to go "all in" on one class, or spread the money around, but the bet must sum to 100.
+        That is consistent with the approach defined by the metric (the value of the user's bet is their
+        probabilistic prediction).  This will be consistent with the output of the models from Trotta and Boone
+        that were developed based on that metric.
+    </p>
+
+    <p>
+
+        <img src="/static/ref09.jpg" alt="???">
+    </p>
+
+    <p>
+
+        References:
+        <li>
+            (1) https://arxiv.org/abs/1809.11145
+        </li>
+
+    </p>
+
+    <br>
+    <button onclick="closeWin()">Close</button>
+    <script>
+        function closeWin() {
+            window.close();
+        }
+    </script>
+
+</body>
+
+
+</html>

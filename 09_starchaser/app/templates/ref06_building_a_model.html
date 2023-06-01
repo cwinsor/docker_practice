@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>context...</title>
+</head>
+
+<body>
+    <h1>Building The Model</h1>
+
+    <p>
+        PLAsTiCC is a timeseries dataset.  Here's the process to create a model using timeseries data:
+        <li>
+        Preprocessing cleans up the data and establishes base attributes.
+        <li>
+        Feature Engineering is the task of creating features.
+        Thousands of features (mostly hand-crafted) are common in PLAsTiCC submissions.
+        <li>
+        Feature Engineering also eliminates the time domain, replacng it with reduction features (think of "period" replacing a series of amplitudes).
+        <li>
+        A metric measures the model's performance. Metrics need to be established up front!
+    </p>
+    <p>
+         Google's Tensorflow provides the framework.  
+        </p>
+
+
+
+
+    <p>
+        <img src="/static/ref06.png" alt="???">
+    </p>
+
+    references:
+    <li>
+        https://www.tensorflow.org/
+    </li>
+    <li>
+        https://github.com/cwinsor/kaggle_plasticc.git
+    </li>
+
+    <button onclick="closeWin()">Close</button>
+    <script>
+        function closeWin() {
+            window.close();
+        }
+    </script>
+
+</body>
+
+
+</html>

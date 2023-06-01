@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    {% if title %}
+    <title>{{ title }} - StarChaser</title>
+    {% else %}
+    <title>Welcome to StarChaser</title>
+    {% endif %}
+</head>
+
+
+<body>
+    <div>StarChaser: <a href="/index">Home</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+
+</html>
+
+
